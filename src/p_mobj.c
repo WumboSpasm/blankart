@@ -12272,7 +12272,7 @@ static boolean P_SetupSpawnedMapThing(mapthing_t *mthing, mobj_t *mobj, boolean 
 		// lastlook is used for indicating the waypoint is a shortcut
 		// extravalue1 is used for indicating the waypoint is disabled
 		// extravalue2 is used for indicating the waypoint is the finishline
-		mobj->threshold = mthing->args[0];
+		mobj->threshold = tag + 1;
 		mobj->movecount = tag;
 		if (mthing->options & MTF_EXTRA)
 		{
@@ -12298,7 +12298,7 @@ static boolean P_SetupSpawnedMapThing(mapthing_t *mthing, mobj_t *mobj, boolean 
 		{
 			mobj->reactiontime = 1;
 		}
-		if (mthing->args[2] == 1)
+		if (tag == 0)
 		{
 			mobj->extravalue2 = 1; // args[2] of 1 means the waypoint is at the finish line
 			mobj->reactiontime = 0; // Also don't respawn at finish lines

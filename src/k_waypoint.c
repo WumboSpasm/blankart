@@ -72,7 +72,7 @@ boolean K_GetWaypointIsFinishline(waypoint_t *waypoint)
 	}
 	else
 	{
-		waypointisfinishline = (waypoint->mobj->extravalue2 == 1);
+		waypointisfinishline = (waypoint->mobj->movecount == 0);
 	}
 
 	return waypointisfinishline;
@@ -1806,6 +1806,11 @@ static waypoint_t *K_MakeWaypoint(mobj_t *const mobj)
 	numwaypoints++;
 
 	P_SetTarget(&madewaypoint->mobj, mobj);
+
+	if (mobj->threshold == numwaypointmobjs)
+	{
+		mobj->threshold = 0;
+	}
 
 	// Don't allow a waypoint that has its next ID set to itself to work
 	if (mobj->threshold != mobj->movecount) {
