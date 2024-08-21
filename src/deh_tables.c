@@ -5476,6 +5476,10 @@ const char *const MOBJTYPE_LIST[] = {  // array length left dynamic for sanity t
 	"MT_PAPERITEMSPOT",
 
 	"MT_BEAMPOINT",
+
+	// PlayerBots
+	"MT_BRANCHPATH",
+	"MT_SHORTCUT",
 };
 
 const char *const MOBJFLAG_LIST[] = {

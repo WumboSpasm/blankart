@@ -28408,6 +28408,62 @@ mobjinfo_t mobjinfo[NUMMOBJTYPES] =
 		MF_NOBLOCKMAP|MF_NOSECTOR|MF_NOCLIPTHING|MF_NOGRAVITY|MF_DONTENCOREMAP, // flags
 		S_NULL          // raisestate
 	},
+
+	// PlayerBots
+
+	{           // MT_BRANCHPATH
+		294,            // doomednum
+		S_INVISIBLE,    // spawnstate
+		1000,           // spawnhealth
+		S_NULL,         // seestate
+		sfx_None,       // seesound
+		8,              // reactiontime
+		sfx_None,       // attacksound
+		S_NULL,         // painstate
+		0,              // painchance
+		sfx_None,       // painsound
+		S_NULL,         // meleestate
+		S_NULL,         // missilestate
+		S_NULL,         // deathstate
+		S_NULL,         // xdeathstate
+		sfx_None,       // deathsound
+		1,              // speed
+		2*FRACUNIT,     // radius
+		4*FRACUNIT,     // height
+		0,              // display offset
+		4,              // mass
+		0,              // damage
+		sfx_None,       // activesound
+		MF_NOBLOCKMAP|MF_NOSECTOR|MF_NOGRAVITY, // flags
+		S_NULL          // raisestate
+	},
+
+	{           // MT_SHORTCUT
+		295,            // doomednum
+		S_INVISIBLE,    // spawnstate
+		1000,           // spawnhealth
+		S_NULL,         // seestate
+		sfx_None,       // seesound
+		8,              // reactiontime
+		sfx_None,       // attacksound
+		S_NULL,         // painstate
+		0,              // painchance
+		sfx_None,       // painsound
+		S_NULL,         // meleestate
+		S_NULL,         // missilestate
+		S_NULL,         // deathstate
+		S_NULL,         // xdeathstate
+		sfx_None,       // deathsound
+		1,              // speed
+		2*FRACUNIT,     // radius
+		4*FRACUNIT,     // height
+		0,              // display offset
+		4,              // mass
+		0,              // damage
+		sfx_None,       // activesound
+		MF_NOBLOCKMAP|MF_NOSECTOR|MF_NOGRAVITY, // flags
+		S_NULL          // raisestate
+	},
 };
 
 skincolor_t skincolors[MAXSKINCOLORS] = {
