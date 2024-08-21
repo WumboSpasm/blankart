@@ -55,6 +55,7 @@ actioncache_t actioncachehead;
 static mobj_t *overlaycap = NULL;
 mobj_t *kitemcap = NULL;	// Used for Kart offensive items (the ones that can get removed by sizedown)
 mobj_t *waypointcap = NULL;
+mobj_t *bosswaypointcap = NULL;
 
 mobj_t *mobjcache = NULL;
 
@@ -12179,8 +12180,8 @@ static boolean P_SetupSpawnedMapThing(mapthing_t *mthing, mobj_t *mobj, boolean 
 	case MT_BOSS3WAYPOINT:
 		mobj->health = mthing->angle;
 		mobj->movecount = mthing->extrainfo;
-		P_SetTarget(&mobj->tracer, waypointcap);
-		P_SetTarget(&waypointcap, mobj);
+		P_SetTarget(&mobj->tracer, bosswaypointcap);
+		P_SetTarget(&bosswaypointcap, mobj);
 		numbosswaypoints++;
 		break;
 	case MT_SPIKE:

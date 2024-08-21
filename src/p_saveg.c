@@ -1563,8 +1563,8 @@ typedef enum
 	MD2_SPRITEYOFFSET = 1<<21,
 	MD2_FLOORSPRITESLOPE = 1<<22,
 	MD2_DISPOFFSET   = 1<<23,
-	//free       = 1<<24,
-	MD2_WAYPOINTCAP  = 1<<25,
+	MD2_WAYPOINTCAP  = 1<<24,
+	MD2_BOSSWAYPOINTCAP = 1<<25,
 	MD2_KITEMCAP     = 1<<26,
 	MD2_ITNEXT       = 1<<27,
 	MD2_LASTMOMZ     = 1<<28,
@@ -1805,6 +1805,8 @@ static void SaveMobjThinker(const thinker_t *th, const UINT8 type)
 		diff2 |= MD2_DISPOFFSET;
 	if (mobj == waypointcap)
 		diff2 |= MD2_WAYPOINTCAP;
+	if (mobj == bosswaypointcap)
+		diff2 |= MD2_BOSSWAYPOINTCAP;
 	if (mobj == kitemcap)
 		diff2 |= MD2_KITEMCAP;
 	if (mobj->itnext)
@@ -3169,6 +3171,9 @@ static thinker_t* LoadMobjThinker(actionf_p1 thinker)
 
 	if (diff2 & MD2_WAYPOINTCAP)
 		P_SetTarget(&waypointcap, mobj);
+
+	if (diff2 & MD2_BOSSWAYPOINTCAP)
+		P_SetTarget(&bosswaypointcap, mobj);
 
 	if (diff2 & MD2_KITEMCAP)
 		P_SetTarget(&kitemcap, mobj);
