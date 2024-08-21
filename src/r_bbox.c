@@ -256,7 +256,7 @@ boolean R_ThingBoundingBoxVisible(mobj_t *thing)
 {
 	INT32 cvmode = cv_renderhitbox.value;
 
-	if (thing->type == MT_WAYPOINT)
+	if (thing->type == MT_BOSS9GATHERPOINT)
 	{
 		// Waypoints debugger serves this purpose
 		return false;

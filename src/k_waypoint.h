@@ -284,7 +284,7 @@ waypoint_t *K_GetNextWaypointToDestination(
 		mobj - The mobj that we are searching for, cannot be changed to a different pointer
 
 	Return:-
-		The waypoint that uses that mobj, NULL if it wasn't found, NULL if it isn't an MT_WAYPOINT
+		The waypoint that uses that mobj, NULL if it wasn't found, NULL if it isn't an MT_BOSS9GATHERPOINT
 --------------------------------------------------*/
 
 waypoint_t *K_SearchWaypointGraphForMobj(mobj_t * const mobj);
@@ -299,7 +299,7 @@ waypoint_t *K_SearchWaypointGraphForMobj(mobj_t * const mobj);
 		mobj - The mobj that we are searching for, cannot be changed to a different pointer
 
 	Return:-
-		The waypoint that uses that mobj, NULL if it wasn't found, NULL if it isn't an MT_WAYPOINT
+		The waypoint that uses that mobj, NULL if it wasn't found, NULL if it isn't an MT_BOSS9GATHERPOINT
 --------------------------------------------------*/
 
 waypoint_t *K_SearchWaypointHeapForMobj(mobj_t * const mobj);

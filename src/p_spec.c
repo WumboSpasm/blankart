@@ -2055,7 +2055,7 @@ void P_CrossSpecialLine(line_t *line, INT32 side, mobj_t *thing)
 
 		switch (line->special)
 		{
-			case 2001: // Finish Line
+			case 293: // Finish Line
 			{
 				if ((gametyperules & GTR_CIRCUIT) && !(player->exiting) && !(player->pflags & PF_HITFINISHLINE))
 				{
@@ -3826,7 +3826,7 @@ static void P_ProcessLineSpecial(line_t *line, mobj_t *mo, sector_t *callsec)
 
 					for (thing = sec->thinglist; thing; thing = thing->snext)
 					{
-						if (thing->type == MT_WAYPOINT)
+						if (thing->type == MT_BOSS9GATHERPOINT)
 						{
 							if (line->flags & ML_NOCLIMB)
 							{
@@ -6918,7 +6918,7 @@ void P_SpawnSpecials(boolean fromnetsave)
 			// SRB2Kart
 			case 2000: // Waypoint Parameters
 				break;
-			case 2001: // Finish Line
+			case 293: // Finish Line
 				if ((gametyperules & GTR_CIRCUIT))
 					circuitmap = true;
 				break;

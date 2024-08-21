@@ -264,7 +264,7 @@ static boolean P_SpecialIsLinedefCrossType(line_t *ld)
 
 	switch (ld->special)
 	{
-		case 2001: // Finish line
+		case 293: // Finish line
 		case 2003: // Respawn line
 		{
 			linedefcrossspecial = true;

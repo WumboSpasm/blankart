@@ -11898,7 +11898,7 @@ static boolean P_SetupBooster(mapthing_t* mthing, mobj_t* mobj, boolean strong)
 static void P_SnapToFinishLine(mobj_t *mobj)
 {
 	line_t *finishline = P_FindNearestLine(mobj->x, mobj->y,
-			mobj->subsector->sector, 2001); // case 2001: Finish Line
+			mobj->subsector->sector, 293); // case 293: Finish Line
 	if (finishline != NULL)
 	{
 		P_UnsetThingPosition(mobj);
@@ -12254,7 +12254,7 @@ static boolean P_SetupSpawnedMapThing(mapthing_t *mthing, mobj_t *mobj, boolean 
 		bflagpoint = mobj->spawnpoint;
 		break;
 	// SRB2Kart
-	case MT_WAYPOINT:
+	case MT_BOSS9GATHERPOINT:
 	{
 		const fixed_t mobjscale =
 			mapheaderinfo[gamemap-1]->default_waypoint_radius;

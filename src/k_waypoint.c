@@ -1446,7 +1446,7 @@ waypoint_t *K_GetNextWaypointToDestination(
 		mobjpointer - A pointer that should be to an mobj to check with the waypoint for matching
 
   Return:-
-		The waypoint that uses that mobj, NULL if it wasn't found, NULL if it isn't an MT_WAYPOINT
+		The waypoint that uses that mobj, NULL if it wasn't found, NULL if it isn't an MT_BOSS9GATHERPOINT
 --------------------------------------------------*/
 static boolean K_CheckWaypointForMobj(waypoint_t *const waypoint, void *const mobjpointer)
 {
@@ -1464,9 +1464,9 @@ static boolean K_CheckWaypointForMobj(waypoint_t *const waypoint, void *const mo
 		{
 			CONS_Debug(DBG_GAMELOGIC, "Mobj Was Removed in K_CheckWaypointForMobj");
 		}
-		else if (mobj->type != MT_WAYPOINT)
+		else if (mobj->type != MT_BOSS9GATHERPOINT)
 		{
-			CONS_Debug(DBG_GAMELOGIC, "Non MT_WAYPOINT mobj in K_CheckWaypointForMobj. Type=%d.\n", mobj->type);
+			CONS_Debug(DBG_GAMELOGIC, "Non MT_BOSS9GATHERPOINT mobj in K_CheckWaypointForMobj. Type=%d.\n", mobj->type);
 		}
 		else
 		{
@@ -1499,7 +1499,7 @@ static boolean K_CheckWaypointForMobj(waypoint_t *const waypoint, void *const mo
 			when one is, so we don't repeat going down a path. Cannot be changed to a different pointer
 
   Return:-
-		The waypoint that uses that mobj, NULL if it wasn't found, NULL if it isn't an MT_WAYPOINT
+		The waypoint that uses that mobj, NULL if it wasn't found, NULL if it isn't an MT_BOSS9GATHERPOINT
 --------------------------------------------------*/
 static waypoint_t *K_TraverseWaypoints(
 	waypoint_t *waypoint,
@@ -1585,7 +1585,7 @@ searchwaypointstart:
 		condition       - the condition being checked by conditionalfunc
 
   Return:-
-		The waypoint that uses that mobj, NULL if it wasn't found, NULL if it isn't an MT_WAYPOINT
+		The waypoint that uses that mobj, NULL if it wasn't found, NULL if it isn't an MT_BOSS9GATHERPOINT
 --------------------------------------------------*/
 static waypoint_t *K_SearchWaypointGraph(
 	boolean (*conditionalfunc)(waypoint_t *const, void *const),
@@ -1619,9 +1619,9 @@ waypoint_t *K_SearchWaypointGraphForMobj(mobj_t *const mobj)
 	{
 		CONS_Debug(DBG_GAMELOGIC, "NULL mobj in K_SearchWaypointGraphForMobj.\n");
 	}
-	else if (mobj->type != MT_WAYPOINT)
+	else if (mobj->type != MT_BOSS9GATHERPOINT)
 	{
-		CONS_Debug(DBG_GAMELOGIC, "Non MT_WAYPOINT mobj in K_SearchWaypointGraphForMobj. Type=%d.\n", mobj->type);
+		CONS_Debug(DBG_GAMELOGIC, "Non MT_BOSS9GATHERPOINT mobj in K_SearchWaypointGraphForMobj. Type=%d.\n", mobj->type);
 	}
 	else
 	{
@@ -1643,7 +1643,7 @@ waypoint_t *K_SearchWaypointGraphForMobj(mobj_t *const mobj)
 		condition       - the condition being checked by conditionalfunc
 
   Return:-
-		The waypoint that uses that mobj, NULL if it wasn't found, NULL if it isn't an MT_WAYPOINT
+		The waypoint that uses that mobj, NULL if it wasn't found, NULL if it isn't an MT_BOSS9GATHERPOINT
 --------------------------------------------------*/
 static waypoint_t *K_SearchWaypointHeap(
 	boolean (*conditionalfunc)(waypoint_t *const, void *const),
@@ -1685,9 +1685,9 @@ waypoint_t *K_SearchWaypointHeapForMobj(mobj_t *const mobj)
 	{
 		CONS_Debug(DBG_GAMELOGIC, "NULL mobj in K_SearchWaypointHeapForMobj.\n");
 	}
-	else if (mobj->type != MT_WAYPOINT)
+	else if (mobj->type != MT_BOSS9GATHERPOINT)
 	{
-		CONS_Debug(DBG_GAMELOGIC, "Non MT_WAYPOINT mobj in K_SearchWaypointHeapForMobj. Type=%d.\n", mobj->type);
+		CONS_Debug(DBG_GAMELOGIC, "Non MT_BOSS9GATHERPOINT mobj in K_SearchWaypointHeapForMobj. Type=%d.\n", mobj->type);
 	}
 	else
 	{
@@ -1865,7 +1865,7 @@ static waypoint_t *K_SetupWaypoint(mobj_t *const mobj)
 	// Error conditions
 	I_Assert(mobj != NULL);
 	I_Assert(!P_MobjWasRemoved(mobj));
-	I_Assert(mobj->type == MT_WAYPOINT);
+	I_Assert(mobj->type == MT_BOSS9GATHERPOINT);
 	I_Assert(waypointcap != NULL); // no waypoint mobjs in map load
 
 	// If we have waypoints already created, search through them first to see if this mobj is already added.
@@ -1974,10 +1974,10 @@ static boolean K_AllocateWaypointHeap(void)
 	// Find how many waypoint mobjs there are in the map, this is the maximum number of waypoints there CAN be
 	for (waypointmobj = waypointcap; waypointmobj != NULL; waypointmobj = waypointmobj->tracer)
 	{
-		if (waypointmobj->type != MT_WAYPOINT)
+		if (waypointmobj->type != MT_BOSS9GATHERPOINT)
 		{
 			CONS_Debug(DBG_SETUP,
-				"Non MT_WAYPOINT mobj in waypointcap in K_AllocateWaypointHeap. Type=%d\n.", waypointmobj->type);
+				"Non MT_BOSS9GATHERPOINT mobj in waypointcap in K_AllocateWaypointHeap. Type=%d\n.", waypointmobj->type);
 			continue;
 		}
 

@@ -3516,7 +3516,7 @@ static void P_ConvertBinaryMap(void)
 		case 780:
 			Tag_FSet(&mapthings[i].tags, mapthings[i].extrainfo);
 			break;
-		case 2001: // MT_WAYPOINT
+		case 293: // MT_BOSS9GATHERPOINT
 		{
 			INT32 firstline = Tag_FindLineSpecial(2000, (INT16)mapthings[i].angle);
 
